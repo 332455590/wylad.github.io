@@ -1,0 +1,3 @@
+include ':app'
+include ':library-view'
+rootProject.name = "DSP-WGT-ADs-demo"

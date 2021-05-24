@@ -1,0 +1,86 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+
+    defaultConfig {
+        applicationId "com.wty.xgt"
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('debug.keystore')
+            keyAlias 'android.keystore'
+            keyPassword 'com.wty.xgt'
+            storePassword 'com.wty.xgt'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+        release {
+            storeFile file('debug.keystore')
+            keyAlias 'android.keystore'
+            keyPassword 'com.wty.xgt'
+            storePassword 'com.wty.xgt'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+    buildTypes {
+//        android.applicationVariants.all { variant ->
+//            variant.outputs.each { output ->
+//                output.processResources.doFirst { pm->
+//                    String manifestPath = output.processResources.manifestFile;
+//                    print(manifestPath);
+//                    replaceInManifest(manifestPath,'application_authority',variant.applicationId);
+//                }
+//            }
+//        }
+        debug {
+            //applicationIdSuffix ".debug2"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+
+        release {
+            //applicationIdSuffix ".release"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+repositories {
+    flatDir {
+        dir 'libs'
+    }
+    flatDir {
+        dir "../library-view/libs"
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    implementation project(path: ':library-view')
+
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
+
+}

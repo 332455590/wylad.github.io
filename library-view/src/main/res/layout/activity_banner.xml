@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:text="30s自动刷新广告, 退出Activity请及时的销毁广告对象"
+        android:layout_height="wrap_content"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnRequestShow01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="请求并展示01" />
+
+            <RelativeLayout
+                android:id="@+id/adContainer01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+
+            <Button
+                android:id="@+id/btnRequestShow02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="请求并展示02" />
+
+            <RelativeLayout
+                android:id="@+id/adContainer02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+
+            <Button
+                android:id="@+id/btnRequestShow03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="请求并展示03" />
+
+            <RelativeLayout
+                android:id="@+id/adContainer03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

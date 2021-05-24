@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.demo">
+
+    <application>
+        <!--            主页        -->
+        <activity android:name="org.demo.app.MainActivity" />
+
+        <!--            开屏界面 （ 请求与展示分开 ）        -->
+        <activity
+            android:name="org.demo.splash.SplashMenuLoadAfterShowActivity"
+            android:theme="@style/SplashTheme" />
+        <!--            开屏界面 （ 请求与展示分开 ）        -->
+        <activity
+            android:name="org.demo.splash.SplashMenuLoadAndShowActivity"
+            android:theme="@style/SplashTheme" />
+
+        <!--            开屏界面热启动的开屏界面        -->
+
+        <!--            原生模板2.0的简单用法        -->
+
+        <!--            原生模板2.0 在 RecyclerView 中的用法        -->
+
+        <!--            原生模板的简单用法        -->
+        <activity android:name="org.demo.native_template.NativeExpressSingleActivity" />
+
+        <!--            原生模板1.0 在 RecyclerView 中的用法        -->
+        <activity android:name="org.demo.native_template.NativeExpressRecyclerViewActivity" />
+
+        <!--            原生信息流的简单用法        -->
+
+        <!--            原生信息流在 RecyclerView 中的用法        -->
+
+        <!--            激励广告        -->
+        <activity android:name="org.demo.reward.RewardActivity" />
+
+        <!--            踩坑指南        -->
+        <activity android:name="org.demo.other.HelpActivity" />
+
+        <!--            Banner 横幅广告        -->
+        <activity android:name="org.demo.banner.BannerActivity" />
+
+        <!--            Interstitial 插屏广告        -->
+        <activity android:name="org.demo.inter.InterActivity" />
+
+        <!--            全屏视频广告        -->
+        <activity android:name="org.demo.fullvideo.FullVideoActivity" />
+
+        <!-- android:configChanges="keyboard|keyboardHidden|orientation|screenSize" -->
+
+        <!--            贴片               -->
+        <activity
+            android:name="org.demo.native_patch.NativePatchVideoActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
+
+        <!--            竖屏视频信息流             -->
+        <!--  android:theme="@android:style/Theme.NoTitleBar" -->
+        <activity
+            android:name="org.demo.native_draw.NativeDrawVideoListActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+    </application>
+
+</manifest>
